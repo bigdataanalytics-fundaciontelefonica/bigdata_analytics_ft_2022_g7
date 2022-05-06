@@ -2,12 +2,19 @@
 
 # Temas:
 - [Filosofia del programa.](../README.md#filosofía-del-programa) (10 min)
-- [Links relevantes.](../README.md#links-relevantes) (15 min)
+- [Links relevantes.](../README.md#links-relevantes) (20 min)
 - [Como contribuir al contenido del curso.](../README.md#como-contribuir-al-contenido-del-curso) (5 min)
 - Fundamentos GCP - 1. Conociendo Google Cloud Platform.
 - Creación de Cuenta GCP. (20 min)
 - Fundamentos GCP - 2. Primeros pasos con Google Cloud Platform
-- Laboratorio [Google Cloud Fundamentals: Introducción a Cloud Storage y Cloud SQL](https://www.cloudskillsboost.google/course_sessions/1037996/labs/104999?locale=es)
+- Laboratorio [Google Cloud Fundamentals: Introducción a Cloud Storage y Cloud SQL]
+(https://www.cloudskillsboost.google/course_sessions/1037996/labs/104999?locale=es)
+
+<input type="text" id="name" name="name"/>
+<input type="button" value="Save" onclick="window.location.href='https://www.cloudskillsboost.google/course_sessions/1037996/labs/104999?locale=es"/>
+<script>
+    
+</script>
 
 # Pendientes:
 

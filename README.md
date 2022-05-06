@@ -49,18 +49,18 @@ https://cloud.google.com/blog/
 # Como contribuir al contenido del curso
 
 Si no sabes programar:
-    - Puedes contribuir reportando fallos en el repo (codigos que no funcionan o que deberia cambiar).
-    - Testeando codigo de otros.
-    - Corrigiendo faltas ortograficas a travez de un pull request.
-    - Solicitando o compartiendo un caso de uso que te gustaria que sea implementado por otros a traves de "github issues".
-    - Compartiendo datasets públicos (probablemente tengamos un apartado para esto en el repo). Asi puedes ayudar a otros a tener ideas para presentar un caso.
-    - Generando documentación (A los progamadores normalmente no les gusta programar).
+- Puedes contribuir reportando fallos en el repo (codigos que no funcionan o que deberia cambiar).
+- Testeando codigo de otros.
+- Corrigiendo faltas ortograficas a travez de un pull request.
+- Solicitando o compartiendo un caso de uso que te gustaria que sea implementado por otros a traves de "github issues".
+- Compartiendo datasets públicos (probablemente tengamos un apartado para esto en el repo). Asi puedes ayudar a otros a tener ideas para presentar un caso.
+- Generando documentación (A los progamadores normalmente no les gusta programar).
 
 Si sabes programar y sabes github:
-    - Desarrollando los retos que proponemos en las clases o resolviendo issues que otros reporten.
+- Desarrollando los retos que proponemos en las clases o resolviendo issues que otros reporten.
 
 Si sabes programar y no sabes github:
-    - Aprende! si quieres llevar tu habilidades a otro nivel tienes que aprender a trabajar colaborativamente.
-    - Colaborando con la gente de tu equipo para que los ayudes a empezar a codear.
+- Aprende! si quieres llevar tu habilidades a otro nivel tienes que aprender a trabajar colaborativamente.
+- Colaborando con la gente de tu equipo para que los ayudes a empezar a codear.
 
 
