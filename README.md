@@ -10,11 +10,11 @@
 
 ### "Los buenos artistas copian, los grandes artistas roban significado" 
 
-- Durante el programa vamos a usar como linea base para la parte practica los labs de cloudskillboost. Pero le añadiremos complejidad con los retos que encontremos en el repo (estos pueden provenir del programa y de los alumnos mismo que quieran añadir funcionalidades de situaciones reales)
+- Durante el programa vamos a usar como linea base para la parte práctica los labs de cloudskillboost. Pero le añadiremos complejidad con los retos que encontremos en el repo (estos pueden provenir del programa y de los alumnos mismo que quieran añadir funcionalidades de situaciones reales)
 
 ### "En tecnologia vas a fallar todo el tiempo, ponte cómodo con lo incómodo"
 
-- Cuando finalmente logras hacer correr el codigo no tienes chance de descansar y decir que marivilloso es. Probablemente tengas que ir al siguiente paso o requerimiento. En el contenido de este programa vas a encontrar varios errores ortograficos y codigos que probablemente no funcionan sientete libre de solicitar un Pull Request para mejorar el contenido para el siguiente programa.
+- Cuando finalmente logras hacer correr el código no tienes chance de descansar y decir que marivilloso es. Probablemente tengas que ir al siguiente paso o requerimiento. En el contenido de este programa vas a encontrar varios errores ortográficos y códigos que probablemente no funcionan siéntete libre de solicitar un Pull Request para mejorar el contenido para el siguiente programa.
 
 ### "Bastante parte de lo que enseñamos en el programa es como buscar en google, aprender a googlear y usar la documentación de google"
 - Google tiene suficiente documentacion gratuita. No necesitas invertir en cursos adicionales luego del programa te mostraremos los path de aprendizajes libres que existen. Probablemente si necesites un mentor. La sugerencia es busca alguien en linkedin que veas que tenga experiencia y pidele ayuda.
