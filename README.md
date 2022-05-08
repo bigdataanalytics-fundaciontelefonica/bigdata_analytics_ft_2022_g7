@@ -10,7 +10,7 @@
 
 ### "Los buenos artistas copian, los grandes artistas roban significado" 
 
-- Durante el programa vamos a usar como linea base para la parte práctica los labs de cloudskillboost. Pero le añadiremos complejidad con los retos que encontremos en el repo (estos pueden provenir del programa y de los alumnos mismo que quieran añadir funcionalidades de situaciones reales)
+- Durante el programa vamos a usar como linea base para la parte practicá los labs de cloudskillboost. Pero le añadiremos complejidad con los retos que encontremos en el repo (estos pueden provenir del programa y de los alumnos mismo que quieran añadir funcionalidades de situaciones reales)
 
 ### "En tecnologia vas a fallar todo el tiempo, ponte cómodo con lo incómodo"
 
