@@ -52,6 +52,16 @@ https://github.blog/2018-03-20-top-10-courses-on-github/
 Donde encontrar las noticias de lanzamiento y actualizaciones de gcp.
 https://cloud.google.com/blog/
 
+Si la documentación de Google aveces es dificil de consumir si estas empezando, puedes encontrar videos en su canal de youtube.
+
+https://www.youtube.com/channel/UCJS9pqu9BzkAMNTmzNMNhvg
+
+
+Google una serie de training para startups.
+
+https://cloudonair.withgoogle.com/events/technical-guide-for-startups-series
+
+
 # Como contribuir al contenido del curso
 
 Si no sabes programar:
