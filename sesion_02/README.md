@@ -7,15 +7,6 @@
 - Fundamentos GCP - 1. Conociendo Google Cloud Platform. (20 min)
 - Creación de Cuenta GCP. (20 min)
 - Fundamentos GCP - 2. Primeros pasos con Google Cloud Platform (30 min)
-- Laboratorio [Google Cloud Fundamentals: Cloud Marketplace](50 min)
-- Fundamentos GCP - 3. Máquinas Virtuales (30 min)
-- Laboratorio [Google Cloud Fundamentals: Introducción a Cloud Storage y Cloud SQL](50 min)
-(https://www.cloudskillsboost.google/course_sessions/1037996/labs/104999?locale=es)
-
-<div>
-<input type="text" id="name" name="name"/>
-<input type="button" value="Save" onclick="window.location.href='https://www.cloudskillsboost.google/course_sessions/1037996/labs/104999?locale=es"/>
-</div>
     
 # Pendientes:
 

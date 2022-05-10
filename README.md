@@ -6,6 +6,8 @@
 
 2. Acceder al [periodo de prueba gratuita de gcp](https://cloud.google.com/docs/get-started).Puedes encontrar el paso a paso [aquí](sesion_01/crea_cuenta_gcp/instrucciones.md)
 
+3. Crear cuenta gratuita de [github](https://github.com).Puedes encontrar el paso a paso [aquí](docs/crea_cuenta_github/instruciones.md)
+
 ## Filosofía del programa
 
 ### "Los buenos artistas copian, los grandes artistas roban significado" 
