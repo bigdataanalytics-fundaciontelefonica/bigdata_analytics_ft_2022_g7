@@ -2,9 +2,9 @@
 
 ## Configuración Inicial
 
-1. Crear cuenta gratuita de [gmail](https://accounts.google.com/signup/v2/webcreateaccount?service=mail&hl=es&continue=http%3A%2F%2Fmail.google.com%2Fmail%2F%3Fpc%3Dtopnav-about-es&flowName=GlifWebSignIn&flowEntry=SignUp). Puedes encontrar el paso a paso [aquí](sesion_01/crea_cuenta_gmail/instrucciones.md)
+1. Crear cuenta gratuita de [gmail](https://accounts.google.com/signup/v2/webcreateaccount?service=mail&hl=es&continue=http%3A%2F%2Fmail.google.com%2Fmail%2F%3Fpc%3Dtopnav-about-es&flowName=GlifWebSignIn&flowEntry=SignUp). Puedes encontrar el paso a paso [aquí](docs/crea_cuenta_gmail/instrucciones.md)
 
-2. Acceder al [periodo de prueba gratuita de gcp](https://cloud.google.com/docs/get-started).Puedes encontrar el paso a paso [aquí](sesion_01/crea_cuenta_gcp/instrucciones.md)
+2. Acceder al [periodo de prueba gratuita de gcp](https://cloud.google.com/docs/get-started).Puedes encontrar el paso a paso [aquí](docs/crea_cuenta_gcp/instrucciones.md)
 
 3. Crear cuenta gratuita de [github](https://github.com).Puedes encontrar el paso a paso [aquí](docs/crea_cuenta_github/instruciones.md)
 
