@@ -10,6 +10,9 @@
 
 - Laboratorio 2: Aspectos básicos de GCP: Cómo comenzar a usar Compute Engine (25 min)
     > https://www.cloudskillsboost.google/course_sessions/**[ID_CUENTA]**/labs/104984?locale=es
+    
+    > Nota: Cuando resuelvan el laboratorio, a la hora de conectarse desde por ssh desde my-vm-2 a my-vm-1 no va a funcionar porque la llave publica no es accesible por my-vm-1. para fines prácticos ejecutar los pasos directamente en el desde ssh de my-vm-1.
+    Para los que quieren forzar el acceso remoto de my-vm-2 pueden encontrar en este [link](https://stackoverflow.com/a/63696203) los pasos para poder crear la llave publica y añadirla a metadatos para q sea accesible por my-vm-1. 
 
 - [Fundamentos GCP - 4. Almacenamiento](https://drive.google.com/file/d/12MT0ZYl8kqpbYZlerSLEyMPbFQlXqBa4/view?usp=sharing) (15 min)
 
