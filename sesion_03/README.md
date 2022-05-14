@@ -16,13 +16,7 @@
 
 - [Fundamentos GCP - 4. Almacenamiento](https://drive.google.com/file/d/12MT0ZYl8kqpbYZlerSLEyMPbFQlXqBa4/view?usp=sharing) (15 min)
 
-- Laboratorio 3: Aspectos básicos de GCP: Introducción a Cloud Storage y Cloud SQL (50 min)
-    > https://www.cloudskillsboost.google/course_sessions/**[ID_CUENTA]**/labs/104999?locale=es
-
-- [Navegacion entre la documentación de google](https://cloud.google.com/) (15 min)
-
 # Pendientes
 
-- Crear cuenta de github
-
+- Crear cuenta [github](https://github.com/ArnoldHueteG/bigdata_analytics_ft_2022_g7/blob/master/docs/crea_cuenta_github/instruciones.md) y colocar su cuenta github en el [sheet](https://docs.google.com/spreadsheets/d/1wBgkptd0kftpsKxXNzfSoZK0ND7uoRSDIxyLjQlFPf8/edit?usp=sharing)
 
