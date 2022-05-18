@@ -14,8 +14,6 @@
     > Nota: Cuando resuelvan el laboratorio, a la hora de conectarse desde por ssh desde my-vm-2 a my-vm-1 no va a funcionar porque la llave publica no es accesible por my-vm-1. para fines prácticos ejecutar los pasos directamente en el desde ssh de my-vm-1.
     Para los que quieren forzar el acceso remoto de my-vm-2 pueden encontrar en este [link](https://stackoverflow.com/a/63696203) los pasos para poder crear la llave publica y añadirla a metadatos para q sea accesible por my-vm-1. 
 
-- [Fundamentos GCP - 4. Almacenamiento](https://drive.google.com/file/d/12MT0ZYl8kqpbYZlerSLEyMPbFQlXqBa4/view?usp=sharing) (15 min)
-
 # Pendientes
 
 - Crear cuenta [github](https://github.com/ArnoldHueteG/bigdata_analytics_ft_2022_g7/blob/master/docs/crea_cuenta_github/instruciones.md) y colocar su cuenta github en el [sheet](https://docs.google.com/spreadsheets/d/1wBgkptd0kftpsKxXNzfSoZK0ND7uoRSDIxyLjQlFPf8/edit?usp=sharing)
