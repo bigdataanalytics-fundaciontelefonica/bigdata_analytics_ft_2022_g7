@@ -1,3 +1,7 @@
 .cosas_por_mencionar.md
 *.pendientes.md
 *.competencia.md
+*fix_csv.py
+.venv
+.ipynb_checkpoints
+.DS_Store
