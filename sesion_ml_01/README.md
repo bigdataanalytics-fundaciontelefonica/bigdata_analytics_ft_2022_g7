@@ -1,8 +1,8 @@
 # Sesion 01 ML - xx/0x/2022
 
-BigQuery Machine Learning (BQML, product in beta) is a new feature in BigQuery where data analysts can create, train, evaluate, and predict with machine learning models with minimal coding.
+BigQuery Machine Learning es una nueva función en BigQuery donde los analistas de datos pueden crear, entrenar, evaluar y predecir con modelos de aprendizaje automático con una codificación mínima.
 
-There is a newly available ecommerce dataset that has millions of Google Analytics records for the Google Merchandise Store loaded into BigQuery. In this lab, you will use this data to run some typical queries that businesses would want to know about their customers' purchasing habits.
+Hay un conjunto de datos de ecommerce recientemente disponible que tiene millones de registros de Google Analytics para Google Merchandise Store cargados en BigQuery. En esta práctica de laboratorio, utilizará estos datos para ejecutar algunas consultas típicas que las empresas querrían saber sobre los hábitos de compra de sus clientes.
 
 ## Temas:
 
