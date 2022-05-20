@@ -15,8 +15,8 @@ OPTIONS (
 );
 
 
-DROP TABLE IF EXISTS `glass-world-327401.staging_zone.DimPersona`;
-CREATE TABLE `glass-world-327401.staging_zone.DimPersona` AS
+DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.DimPersona`;
+CREATE TABLE `focus-infusion-348919.staging_zone.DimPersona` AS
 SELECT 
     p.BusinessEntityID PersonaID,
 coalesce(p.Title,'') || ' ' || coalesce(p.FirstName,'') || ' '||
@@ -50,40 +50,40 @@ CAST(REPLACE(JSON_EXTRACT(raw_zone.xml_to_json(p.Demographics),'$.IndividualSurv
 CAST(REPLACE(JSON_EXTRACT(raw_zone.xml_to_json(p.Demographics),'$.IndividualSurvey.HomeOwnerFlag._text'),"\"","") AS INTEGER) DuenoCasa,
 CAST(REPLACE(JSON_EXTRACT(raw_zone.xml_to_json(p.Demographics),'$.IndividualSurvey.NumberCarsOwned._text'),"\"","") AS INTEGER) NumeroCarros,
 CAST(REPLACE(JSON_EXTRACT(raw_zone.xml_to_json(p.Demographics),'$.IndividualSurvey.CommuteDistance._text'),"\"","") AS STRING) DistanciaTrabajo
-FROM  `glass-world-327401.raw_zone.Person` p
+FROM  `focus-infusion-348919.raw_zone.Person` p
 LEFT JOIN (SELECT * FROM (
         SELECT *, ROW_NUMBER() over (PARTITION BY BusinessEntityID ORDER BY ModifiedDate DESC) RN
-        FROM `glass-world-327401.raw_zone.BusinessEntityAddress`) A WHERE RN=1) bea ON bea.BusinessEntityID = p.BusinessEntityID
-LEFT JOIN `glass-world-327401.raw_zone.Address` a ON a.AddressID = bea.AddressID
-LEFT JOIN `glass-world-327401.raw_zone.StateProvince` sp ON sp.StateProvinceID = a.StateProvinceID
-LEFT JOIN `glass-world-327401.raw_zone.CountryRegion` cr ON cr.CountryRegionCode = sp.CountryRegionCode
-LEFT JOIN `glass-world-327401.raw_zone.AddressType` adt ON adt.AddressTypeID = bea.AddressTypeID
-LEFT OUTER JOIN `glass-world-327401.raw_zone.EmailAddress` ea ON ea.BusinessEntityID = p.BusinessEntityID
-LEFT OUTER JOIN `glass-world-327401.raw_zone.PersonPhone` pp ON pp.BusinessEntityID = p.BusinessEntityID
-LEFT OUTER JOIN `glass-world-327401.raw_zone.PhoneNumberType` pnt ON pnt.PhoneNumberTypeID = pp.PhoneNumberTypeID;
+        FROM `focus-infusion-348919.raw_zone.BusinessEntityAddress`) A WHERE RN=1) bea ON bea.BusinessEntityID = p.BusinessEntityID
+LEFT JOIN `focus-infusion-348919.raw_zone.Address` a ON a.AddressID = bea.AddressID
+LEFT JOIN `focus-infusion-348919.raw_zone.StateProvince` sp ON sp.StateProvinceID = a.StateProvinceID
+LEFT JOIN `focus-infusion-348919.raw_zone.CountryRegion` cr ON cr.CountryRegionCode = sp.CountryRegionCode
+LEFT JOIN `focus-infusion-348919.raw_zone.AddressType` adt ON adt.AddressTypeID = bea.AddressTypeID
+LEFT OUTER JOIN `focus-infusion-348919.raw_zone.EmailAddress` ea ON ea.BusinessEntityID = p.BusinessEntityID
+LEFT OUTER JOIN `focus-infusion-348919.raw_zone.PersonPhone` pp ON pp.BusinessEntityID = p.BusinessEntityID
+LEFT OUTER JOIN `focus-infusion-348919.raw_zone.PhoneNumberType` pnt ON pnt.PhoneNumberTypeID = pp.PhoneNumberTypeID;
 
 
-select count(1),count(distinct PersonaID) from `glass-world-327401.staging_zone.DimPersona`
+select count(1),count(distinct PersonaID) from `focus-infusion-348919.staging_zone.DimPersona`
 
-DROP TABLE IF EXISTS `glass-world-327401.staging_zone.DimCliente`;
-CREATE TABLE `glass-world-327401.staging_zone.DimCliente` AS
+DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.DimCliente`;
+CREATE TABLE `focus-infusion-348919.staging_zone.DimCliente` AS
 select a.CustomerID ClienteID, b.*
-FROM `glass-world-327401.raw_zone.Customer` a
-left join `glass-world-327401.staging_zone.DimPersona` b on a.PersonID = b.PersonaID
+FROM `focus-infusion-348919.raw_zone.Customer` a
+left join `focus-infusion-348919.staging_zone.DimPersona` b on a.PersonID = b.PersonaID
 WHERE a.PersonID IS not NULL;
 
-select count(1),count(distinct ClienteID) from `glass-world-327401.staging_zone.DimCliente`
+select count(1),count(distinct ClienteID) from `focus-infusion-348919.staging_zone.DimCliente`
 
-DROP TABLE IF EXISTS `glass-world-327401.staging_zone.DimVendedor`;
-CREATE TABLE `glass-world-327401.staging_zone.DimVendedor` AS
+DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.DimVendedor`;
+CREATE TABLE `focus-infusion-348919.staging_zone.DimVendedor` AS
 select a.BusinessEntityID VendedorID, b.*
-FROM `glass-world-327401.raw_zone.SalesPerson` a
-left join `glass-world-327401.staging_zone.DimPersona` b on a.BusinessEntityID = b.PersonaID;
+FROM `focus-infusion-348919.raw_zone.SalesPerson` a
+left join `focus-infusion-348919.staging_zone.DimPersona` b on a.BusinessEntityID = b.PersonaID;
 
-select count(1),count(distinct VendedorID) from `glass-world-327401.staging_zone.DimVendedor`
+select count(1),count(distinct VendedorID) from `focus-infusion-348919.staging_zone.DimVendedor`
 
-DROP TABLE IF EXISTS `glass-world-327401.staging_zone.DimDistribuidor`;
-CREATE TABLE `glass-world-327401.staging_zone.DimDistribuidor` AS
+DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.DimDistribuidor`;
+CREATE TABLE `focus-infusion-348919.staging_zone.DimDistribuidor` AS
 SELECT
     s.BusinessEntityID DistribuidorID,
     s.Name Distribuidor,
@@ -97,13 +97,13 @@ SELECT
     CAST(REPLACE(JSON_EXTRACT(raw_zone.xml_to_json(Demographics),'$.StoreSurvey.Brands._text'),"\"","") AS STRING) Marcas,
     CAST(REPLACE(JSON_EXTRACT(raw_zone.xml_to_json(Demographics),'$.StoreSurvey.Internet._text'),"\"","") AS STRING) Internet,
     CAST(REPLACE(JSON_EXTRACT(raw_zone.xml_to_json(Demographics),'$.StoreSurvey.NumberEmployees._text'),"\"","") AS INTEGER) NumeroEmpleados
-FROM `glass-world-327401.raw_zone.Store` s
-left join `glass-world-327401.raw_zone.Customer` a on a.StoreID=s.BusinessEntityID and a.PersonID is null;
+FROM `focus-infusion-348919.raw_zone.Store` s
+left join `focus-infusion-348919.raw_zone.Customer` a on a.StoreID=s.BusinessEntityID and a.PersonID is null;
 
-select count(1),count(distinct DistribuidorID) from `glass-world-327401.staging_zone.DimDistribuidor`
+select count(1),count(distinct DistribuidorID) from `focus-infusion-348919.staging_zone.DimDistribuidor`
 
-DROP TABLE IF EXISTS `glass-world-327401.staging_zone.DimTerritorio`;
-CREATE TABLE `glass-world-327401.staging_zone.DimTerritorio` AS
+DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.DimTerritorio`;
+CREATE TABLE `focus-infusion-348919.staging_zone.DimTerritorio` AS
 SELECT TerritoryID TerritorioID,
        Name Territorio,
        CountryRegionCode CodigoPais,
@@ -112,12 +112,12 @@ SELECT TerritoryID TerritorioID,
        SalesLastYear VentasUltimoAno,
        CostYTD CostoYTD,
        CostLastYear CostoUltimoAno
-FROM `glass-world-327401.raw_zone.SalesTerritory`
+FROM `focus-infusion-348919.raw_zone.SalesTerritory`
 
-select count(1),count(distinct TerritorioID) from `glass-world-327401.staging_zone.DimTerritorio`
+select count(1),count(distinct TerritorioID) from `focus-infusion-348919.staging_zone.DimTerritorio`
 
-DROP TABLE IF EXISTS `glass-world-327401.staging_zone.DimProducto`;
-CREATE TABLE `glass-world-327401.staging_zone.DimProducto` AS
+DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.DimProducto`;
+CREATE TABLE `focus-infusion-348919.staging_zone.DimProducto` AS
 select
 j.ProductID ProductoID,
 J.Name Producto,
@@ -129,17 +129,17 @@ j.ListPrice PrecioLista,
 K.Name SubCategoria,
 l.Name Categoria,
 m.Name Modelo
-from `glass-world-327401.raw_zone.Product` j
-left join `glass-world-327401.raw_zone.ProductSubcategory` k on j.ProductSubcategoryID=k.ProductSubcategoryID
-left join `glass-world-327401.raw_zone.ProductCategory` l on k.ProductCategoryID=l.ProductCategoryID
-left join `glass-world-327401.raw_zone.ProductModel` m on j.ProductModelID=m.ProductModelID
+from `focus-infusion-348919.raw_zone.Product` j
+left join `focus-infusion-348919.raw_zone.ProductSubcategory` k on j.ProductSubcategoryID=k.ProductSubcategoryID
+left join `focus-infusion-348919.raw_zone.ProductCategory` l on k.ProductCategoryID=l.ProductCategoryID
+left join `focus-infusion-348919.raw_zone.ProductModel` m on j.ProductModelID=m.ProductModelID
 where j.FinishedGoodsFlag = TRUE ;
 
-select count(1),count(distinct ProductoID) from `glass-world-327401.staging_zone.DimProducto`
+select count(1),count(distinct ProductoID) from `focus-infusion-348919.staging_zone.DimProducto`
 
 
-DROP TABLE IF EXISTS `glass-world-327401.staging_zone.FactVentas`;
-CREATE TABLE `glass-world-327401.staging_zone.FactVentas` 
+DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.FactVentas`;
+CREATE TABLE `focus-infusion-348919.staging_zone.FactVentas` 
 partition by date(FechaVenta)
 AS
 select  A.SalesOrderID VentaID,
@@ -156,9 +156,9 @@ select  A.SalesOrderID VentaID,
         B.ProductID as ProductoID,
         B.OrderQty as Cantidad,
         B.LineTotal as Monto)) AS Detalle
-FROM `glass-world-327401.raw_zone.SalesOrderHeader` A
-    LEFT JOIN `glass-world-327401.raw_zone.SalesOrderDetail` B ON A.SalesOrderID=B.SalesOrderID
-    LEFT JOIN `glass-world-327401.raw_zone.Customer` C ON A.CustomerID=C.CustomerID
+FROM `focus-infusion-348919.raw_zone.SalesOrderHeader` A
+    LEFT JOIN `focus-infusion-348919.raw_zone.SalesOrderDetail` B ON A.SalesOrderID=B.SalesOrderID
+    LEFT JOIN `focus-infusion-348919.raw_zone.Customer` C ON A.CustomerID=C.CustomerID
 group by a.SalesOrderID,
         a.OrderDate,
         a.OnlineOrderFlag,
@@ -171,8 +171,8 @@ group by a.SalesOrderID,
 
 ñ
 
-DROP TABLE IF EXISTS `glass-world-327401.analytics_zone.TablonVentas`;
-CREATE TABLE `glass-world-327401.analytics_zone.TablonVentas`
+DROP TABLE IF EXISTS `focus-infusion-348919.analytics_zone.TablonVentas`;
+CREATE TABLE `focus-infusion-348919.analytics_zone.TablonVentas`
 partition by date(FechaVenta)
 AS
 SELECT A.VentaID,A.FechaVenta,A.FlagVentaOnline,A.Estado,A.Items,A.MontoTotal,A.Detalle,
@@ -196,13 +196,13 @@ array_agg(STRUCT(
         STRUCT(E.ProductoID,E.Producto,E.CodigoProducto,E.FlagProductoTerminado,E.Color,E.CostoEstandar,E.PrecioLista,E.SubCategoria,E.Categoria,E.Modelo) AS Producto,
         D.Cantidad,
         D.Monto)) AS Detalle
-FROM `glass-world-327401.staging_zone.FactVentas`A, UNNEST(Detalle) as D
-LEFT JOIN `glass-world-327401.staging_zone.DimProducto` E ON D.ProductoID=E.ProductoID
+FROM `focus-infusion-348919.staging_zone.FactVentas`A, UNNEST(Detalle) as D
+LEFT JOIN `focus-infusion-348919.staging_zone.DimProducto` E ON D.ProductoID=E.ProductoID
 GROUP BY A.VentaID,A.FechaVenta,A.FlagVentaOnline,A.Estado,A.ClienteID,A.DistribuidorID,A.VendedorID,A.TerritorioID,A.Items,A.MontoTotal) A 
-LEFT JOIN `glass-world-327401.staging_zone.DimCliente` B ON A.ClienteID=B.ClienteID
-LEFT JOIN `glass-world-327401.staging_zone.DimDistribuidor` C ON A.DistribuidorID=C.DistribuidorID
-LEFT JOIN `glass-world-327401.staging_zone.DimTerritorio` D ON A.TerritorioID=D.TerritorioID
-LEFT JOIN `glass-world-327401.staging_zone.DimVendedor` E ON A.VendedorID=E.VendedorID
+LEFT JOIN `focus-infusion-348919.staging_zone.DimCliente` B ON A.ClienteID=B.ClienteID
+LEFT JOIN `focus-infusion-348919.staging_zone.DimDistribuidor` C ON A.DistribuidorID=C.DistribuidorID
+LEFT JOIN `focus-infusion-348919.staging_zone.DimTerritorio` D ON A.TerritorioID=D.TerritorioID
+LEFT JOIN `focus-infusion-348919.staging_zone.DimVendedor` E ON A.VendedorID=E.VendedorID
 
 
---SELECT COUNT(1),SUM(Items) FROM `glass-world-327401.staging_zone.FactVentas`
+--SELECT COUNT(1),SUM(Items) FROM `focus-infusion-348919.staging_zone.FactVentas`
