@@ -2,8 +2,6 @@
 
 # Temas:
 
-
-
 - [Consultar datos publicos bigquery](https://cloud.google.com/bigquery/docs/quickstarts/query-public-dataset-console)
 
 - [Carga y consulta datos](https://cloud.google.com/bigquery/docs/quickstarts/load-data-console)
