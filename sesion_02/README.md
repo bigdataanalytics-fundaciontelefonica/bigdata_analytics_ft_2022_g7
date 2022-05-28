@@ -1,4 +1,4 @@
-# Sesion 02 - 04/05/2022
+# Sesión 02 - 04/05/2022
 
 # Temas:
 - [Filosofía del programa.](../README.md#filosofía-del-programa) (10 min)
