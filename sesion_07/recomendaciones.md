@@ -9,4 +9,5 @@
 - [Data Scientist](https://www.cloudskillsboost.google/paths/17)
 5. meetings con mentores. https://calendly.com/ahueteg/sesion-grupal
 6. sesiones paralelas.
-
+7. Crear proyecto y dar acceso a los compañeros.
+https://blog.panoply.io/bigquery-etl-tools
