@@ -12,4 +12,3 @@
 - [Carga y consulta datos](https://cloud.google.com/bigquery/docs/quickstarts/load-data-console)
 
 - [Línea de Comandos](https://cloud.google.com/bigquery/docs/quickstarts/load-data-bq)
-

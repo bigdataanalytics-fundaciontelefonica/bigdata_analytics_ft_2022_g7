@@ -1,5 +1,6 @@
 
-CREATE SCHEMA staging_zone;
+CREATE SCHEMA IF not EXISTS staging_zone;
+CREATE SCHEMA IF not EXISTS analytics_zone;
 
 --https://github.com/salrashid123/bq-udf-xml
 --https://stackoverflow.com/questions/50402276/big-query-user-defined-function-dramatically-slows-down-the-query
@@ -63,7 +64,7 @@ LEFT OUTER JOIN `focus-infusion-348919.raw_zone.PersonPhone` pp ON pp.BusinessEn
 LEFT OUTER JOIN `focus-infusion-348919.raw_zone.PhoneNumberType` pnt ON pnt.PhoneNumberTypeID = pp.PhoneNumberTypeID;
 
 
-select count(1),count(distinct PersonaID) from `focus-infusion-348919.staging_zone.DimPersona`
+select count(1),count(distinct PersonaID) from `focus-infusion-348919.staging_zone.DimPersona`;
 
 DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.DimCliente`;
 CREATE TABLE `focus-infusion-348919.staging_zone.DimCliente` AS
@@ -72,7 +73,7 @@ FROM `focus-infusion-348919.raw_zone.Customer` a
 left join `focus-infusion-348919.staging_zone.DimPersona` b on a.PersonID = b.PersonaID
 WHERE a.PersonID IS not NULL;
 
-select count(1),count(distinct ClienteID) from `focus-infusion-348919.staging_zone.DimCliente`
+select count(1),count(distinct ClienteID) from `focus-infusion-348919.staging_zone.DimCliente`;
 
 DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.DimVendedor`;
 CREATE TABLE `focus-infusion-348919.staging_zone.DimVendedor` AS
@@ -80,7 +81,7 @@ select a.BusinessEntityID VendedorID, b.*
 FROM `focus-infusion-348919.raw_zone.SalesPerson` a
 left join `focus-infusion-348919.staging_zone.DimPersona` b on a.BusinessEntityID = b.PersonaID;
 
-select count(1),count(distinct VendedorID) from `focus-infusion-348919.staging_zone.DimVendedor`
+select count(1),count(distinct VendedorID) from `focus-infusion-348919.staging_zone.DimVendedor`;
 
 DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.DimDistribuidor`;
 CREATE TABLE `focus-infusion-348919.staging_zone.DimDistribuidor` AS
@@ -100,7 +101,7 @@ SELECT
 FROM `focus-infusion-348919.raw_zone.Store` s
 left join `focus-infusion-348919.raw_zone.Customer` a on a.StoreID=s.BusinessEntityID and a.PersonID is null;
 
-select count(1),count(distinct DistribuidorID) from `focus-infusion-348919.staging_zone.DimDistribuidor`
+select count(1),count(distinct DistribuidorID) from `focus-infusion-348919.staging_zone.DimDistribuidor`;
 
 DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.DimTerritorio`;
 CREATE TABLE `focus-infusion-348919.staging_zone.DimTerritorio` AS
@@ -112,9 +113,9 @@ SELECT TerritoryID TerritorioID,
        SalesLastYear VentasUltimoAno,
        CostYTD CostoYTD,
        CostLastYear CostoUltimoAno
-FROM `focus-infusion-348919.raw_zone.SalesTerritory`
+FROM `focus-infusion-348919.raw_zone.SalesTerritory`;
 
-select count(1),count(distinct TerritorioID) from `focus-infusion-348919.staging_zone.DimTerritorio`
+select count(1),count(distinct TerritorioID) from `focus-infusion-348919.staging_zone.DimTerritorio`;
 
 DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.DimProducto`;
 CREATE TABLE `focus-infusion-348919.staging_zone.DimProducto` AS
@@ -135,7 +136,7 @@ left join `focus-infusion-348919.raw_zone.ProductCategory` l on k.ProductCategor
 left join `focus-infusion-348919.raw_zone.ProductModel` m on j.ProductModelID=m.ProductModelID
 where j.FinishedGoodsFlag = TRUE ;
 
-select count(1),count(distinct ProductoID) from `focus-infusion-348919.staging_zone.DimProducto`
+select count(1),count(distinct ProductoID) from `focus-infusion-348919.staging_zone.DimProducto`;
 
 
 DROP TABLE IF EXISTS `focus-infusion-348919.staging_zone.FactVentas`;
@@ -168,8 +169,7 @@ group by a.SalesOrderID,
         a.SalesPersonID,
         a.TerritoryID;
 
-
-ñ
+select count(1),count(distinct VentaID) from `focus-infusion-348919.staging_zone.FactVentas`;
 
 DROP TABLE IF EXISTS `focus-infusion-348919.analytics_zone.TablonVentas`;
 CREATE TABLE `focus-infusion-348919.analytics_zone.TablonVentas`
@@ -202,7 +202,7 @@ GROUP BY A.VentaID,A.FechaVenta,A.FlagVentaOnline,A.Estado,A.ClienteID,A.Distrib
 LEFT JOIN `focus-infusion-348919.staging_zone.DimCliente` B ON A.ClienteID=B.ClienteID
 LEFT JOIN `focus-infusion-348919.staging_zone.DimDistribuidor` C ON A.DistribuidorID=C.DistribuidorID
 LEFT JOIN `focus-infusion-348919.staging_zone.DimTerritorio` D ON A.TerritorioID=D.TerritorioID
-LEFT JOIN `focus-infusion-348919.staging_zone.DimVendedor` E ON A.VendedorID=E.VendedorID
+LEFT JOIN `focus-infusion-348919.staging_zone.DimVendedor` E ON A.VendedorID=E.VendedorID;
 
 
---SELECT COUNT(1),SUM(Items) FROM `focus-infusion-348919.staging_zone.FactVentas`
+select count(1),count(distinct VentaID) from `focus-infusion-348919.analytics_zone.TablonVentas`;
