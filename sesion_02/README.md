@@ -1,7 +1,7 @@
-# Sesion 02 - 04/05/2022
+# Sesión 02 - 04/05/2022
 
 # Temas:
-- [Filosofia del programa.](../README.md#filosofía-del-programa) (10 min)
+- [Filosofía del programa.](../README.md#filosofía-del-programa) (10 min)
 - [Links relevantes.](../README.md#links-relevantes) (30 min)
 - [Como contribuir al contenido del curso.](../README.md#como-contribuir-al-contenido-del-curso) (10 min)
 - [Fundamentos GCP - 1. Conociendo Google Cloud Platform](https://drive.google.com/file/d/10pN8P8VibI1O7S8KXkuROTDZnHF0vDVV/view?usp=sharing) (50 min)
@@ -12,4 +12,4 @@
 
 - Encuesta 2 para conocer más su perfil
 # FAQ:
-TODO: Poner aqui las preguntas que hicieron en la sesion con las respuestas en resumen.
+TODO: Poner aquí las preguntas que hicieron en la sesión con las respuestas en resumen.
