@@ -12,3 +12,7 @@
 - [Carga y consulta datos](https://cloud.google.com/bigquery/docs/quickstarts/load-data-console)
 
 - [Línea de Comandos](https://cloud.google.com/bigquery/docs/quickstarts/load-data-bq)
+
+# Preguntas Realizadas en la Sesión:
+
+TODO: Poner aqui las preguntas que hicieron en el sesion con las respuestas.

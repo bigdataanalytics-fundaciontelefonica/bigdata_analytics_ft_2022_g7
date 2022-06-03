@@ -6,3 +6,6 @@
 
 - Laboratorio.
 
+# Preguntas Realizadas en la Sesión:
+
+TODO: Poner aqui las preguntas que hicieron en el sesion con las respuestas.

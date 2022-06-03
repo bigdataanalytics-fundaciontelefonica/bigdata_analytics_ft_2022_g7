@@ -10,5 +10,6 @@
 2. Llenar encuesta de perfiles.
 3. Crear cuenta gcp.
 
-# FAQ:
-TODO: Poner aqui las preguntas que hicieron en el sesion con las respuestas en resumen.
+# Preguntas Realizadas en la Sesión:
+
+TODO: Poner aqui las preguntas que hicieron en el sesion con las respuestas.

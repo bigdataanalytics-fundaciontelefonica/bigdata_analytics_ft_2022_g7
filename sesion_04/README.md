@@ -9,6 +9,8 @@
 
 - [Navegacion entre la documentación de google](https://cloud.google.com/) (15 min)
 
-- Como leer costos
+- Cómo leer los costos asociados al consumo?
 
-- 
+# Preguntas Realizadas en la Sesión:
+
+TODO: Poner aqui las preguntas que hicieron en el sesion con las respuestas.
