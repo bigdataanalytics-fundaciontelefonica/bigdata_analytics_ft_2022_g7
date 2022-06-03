@@ -3,7 +3,7 @@
 1. En trabajos donde hay mucha incertidumbre es mejor fallar rapido
 2. Slack puede ser utilizado por celular y tiene funcionalidad de audio y comparticion de pantalla, tambien tiene video llamada.
 3. Definan los roles (2,2,2) (3,2,1) (1,2,3)
-4. De acuerdo al rol capacitense dep Hola  endiendo del Hola  path.
+4. De acuerdo al rol capacitense dependiendo del path.
 - [Data Engineer](https://www.cloudskillsboost.google/paths/16)
 - [Data Analyst](https://www.cloudskillsboost.google/paths/18)
 - [Data Scientist](https://www.cloudskillsboost.google/paths/17)
