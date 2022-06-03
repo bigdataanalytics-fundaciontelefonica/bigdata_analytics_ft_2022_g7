@@ -51,7 +51,6 @@ CAST(REPLACE(JSON_EXTRACT(raw_zone.xml_to_json(p.Demographics),'$.IndividualSurv
 CAST(REPLACE(JSON_EXTRACT(raw_zone.xml_to_json(p.Demographics),'$.IndividualSurvey.HomeOwnerFlag._text'),"\"","") AS INTEGER) DuenoCasa,
 CAST(REPLACE(JSON_EXTRACT(raw_zone.xml_to_json(p.Demographics),'$.IndividualSurvey.NumberCarsOwned._text'),"\"","") AS INTEGER) NumeroCarros,
 CAST(REPLACE(JSON_EXTRACT(raw_zone.xml_to_json(p.Demographics),'$.IndividualSurvey.CommuteDistance._text'),"\"","") AS STRING) DistanciaTrabajo
-
 FROM  `focus-infusion-348919.raw_zone.Person` p
 LEFT JOIN (SELECT * FROM (
         SELECT *, ROW_NUMBER() over (PARTITION BY BusinessEntityID ORDER BY ModifiedDate DESC) RN
