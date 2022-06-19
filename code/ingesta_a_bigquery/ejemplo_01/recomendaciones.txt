@@ -1,0 +1,11 @@
+para escoger la data y el problema a resolver:
+busquen la data en base al problema que quieren resolver.
+escojan un problema q sea de mutuo entendimiento en el grupo porque el proposito hace que el como sea mas facil.
+utilizen varias fuentes de informacion. creen su datalake.
+sea la data que elijan y el analisis que hagan se les data facilidades para el desarrollo levanten la mano cualquier bloqueo que tengan.
+
+una vez definido su data:
+no deberia haber bloqueos para los roles se desempeñen (analista de datos y data scientist)
+vamos a tener mentores de machine learning para el apoyo en el desarrollo de su caso.
+
+
